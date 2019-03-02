@@ -1,0 +1,47 @@
+﻿@model List<cp2.Models.BusinessModels.Instruction>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+@foreach (var instruction in Model)
+{
+<div>
+    <h4>Instruction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => instruction.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => instruction.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => instruction.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => instruction.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => instruction.ImageLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => instruction.ImageLink)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => instruction.Theme)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => instruction.Theme)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@instruction.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+}
