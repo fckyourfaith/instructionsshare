@@ -57,6 +57,7 @@ namespace cp2
             }
 
             app.UseStaticFiles();
+            app.UseDefaultFiles();
 
             app.UseAuthentication();
 
